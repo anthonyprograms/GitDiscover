@@ -32,8 +32,8 @@ if (Meteor.isClient) {
         username: Meteor.user().username
       });
 
-      $('input.name').val("");
-      $('input.url').val("");
+      $('input#name').val("");
+      $('input#url').val("");
       $('textarea#description').val("");
     }
   });
