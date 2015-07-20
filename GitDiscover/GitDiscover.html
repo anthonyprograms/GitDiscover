@@ -7,6 +7,9 @@
 	  	<h1>DiscoverOS</h1>
 	  	{{> loginButtons}}
 
+	  	
+	  	<button onclick="$('.new-entry').hide();">Hide Form</button>
+	  	<button onclick="$('.new-entry').show();">Show Form</button>
 	  	<form class="new-entry">
 	  		<div class="input-field col s6">
 	          	<input id="name" type="text" class="validate">
@@ -29,19 +32,35 @@
 			    </form>
 			  </div>
 	  		<br>
-	  		<label>Language</label>
-		    <select class="browser-default" id="language">
-		      	<option value="JavaScript">JavaScript</option>
-	  			<option value="Objective-C">Objective-C</option>
-	  			<option value="Swift">Swift</option>
-	  			<option value="C">C</option>
-	  			<option value="Ruby">Ruby</option>
-	  			<option value="Java">Java</option>
-	  			<option value="Python">Python</option>
-	  			<option value="HTML">HTML</option>
-	  			<option value="Haskell">Haskell</option>
-	  			<option value="CSS">CSS</option>
-		    </select>
+
+	  		<!-- <p> -->
+		      	<input type="checkbox" class="filled-in" id="filled-in-box" value="JavaScript"/>
+		      	<label for="filled-in-box" class="check-language">JavaScript</label>
+		    <!-- </p> -->
+		    <!-- <p> -->
+		      	<input type="checkbox" class="filled-in" id="filled-in-box2" value="Objective-C"/>
+		      	<label for="filled-in-box2" class="check-language">Objective-C</label>
+		    <!-- </p> -->
+		    <!-- <p> -->
+		      	<input type="checkbox" class="filled-in" id="filled-in-box3" value="Swift"/>
+		      	<label for="filled-in-box3" class="check-language">Swift</label>
+		    <!-- </p> -->
+		    <!-- <p> -->
+		      	<input type="checkbox" class="filled-in" id="filled-in-box4" value="C"/>
+		      	<label for="filled-in-box4" class="check-language">C</label>
+		    <!-- </p> -->
+		    <!-- <p> -->
+		      	<input type="checkbox" class="filled-in" id="filled-in-box5" value="Ruby"/>
+		      	<label for="filled-in-box5" class="check-language">Ruby</label>
+		    <!-- </p> -->
+		    <!-- <p> -->
+		      	<input type="checkbox" class="filled-in" id="filled-in-box6" value="Java"/>
+		      	<label for="filled-in-box6" class="check-language">Java</label>
+		    <!-- </p> -->
+		    <!-- <p> -->
+		      	<input type="checkbox" class="filled-in" id="filled-in-box7" value="Python"/>
+		      	<label for="filled-in-box7" class="check-language">Python</label>
+		    <!-- </p> -->
 		    <br>
 			<label>Skill Level</label>
 	  		<select class="browser-default" id="skill-level">
