@@ -1,6 +1,10 @@
 Entries = new Mongo.Collection("entries");
 
 if (Meteor.isClient) {
+  Accounts.ui.config({
+   passwordSignupFields: 'USERNAME_ONLY'
+  });
+
   Template.body.helpers({
     entries: function () {
       return Entries.find({}, {sort: {createdAt: -1}});
@@ -23,12 +27,26 @@ if (Meteor.isClient) {
         url: url,
         description: description,
         language: language,
-        skillLevel: skillLevel
+        skillLevel: skillLevel,
+        owner: Meteor.userId(),
+        username: Meteor.user().username
       });
 
       $('input.name').val("");
       $('input.url').val("");
       $('textarea.description').val("");
+    }
+  });
+
+  Template.entry.events({
+    "click .delete": function () {
+      Entries.remove(this._id);
+    }
+  });
+
+  Template.entry.helpers({
+    isOwner: function () {
+      return Meteor.userId() == this.owner;
     }
   });
 }

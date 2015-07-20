@@ -1,10 +1,10 @@
 <head>
-  	<title>GitDiscover</title>
+  	<title>DiscoverOS</title>
 </head>
 
 <body>
   	{{#if currentUser}}
-	  	<h1>Discover Open Source</h1>
+	  	<h1>DiscoverOS</h1>
 	  	{{> loginButtons}}
 
 	  	<form class="new-entry">
@@ -45,12 +45,16 @@
 	  		<br>
 	  		{{> loginButtons}}
 	  	</div>
-
   	{{/if}}
 </body>
 
 <template name="entry">
 	<div class="entries">
+		<span class="username">{{username}}</span>
+		{{#if isOwner}}
+			<button class="delete">&times;</button>
+		{{/if}}
+		<br>
 		<span class="name">{{name}}</span>
 		<br>
 		<a class="url" href="{{url}}" target="_blank">{{url}}</a>
