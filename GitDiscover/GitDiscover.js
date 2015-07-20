@@ -15,11 +15,11 @@ if (Meteor.isClient) {
     "submit .new-entry": function (event) {
       event.preventDefault();
 
-      var name = $('input.name').val();
-      var url = $('input.url').val();
-      var description = $('textarea.description').val();
-      var language = $('select.language').val();
-      var skillLevel = $('select.skill-level').val();
+      var name = $('input#name').val();
+      var url = $('input#url').val();
+      var description = $('textarea#description').val();
+      var language = $('select#language').val();
+      var skillLevel = $('select#skill-level').val();
 
       Entries.insert({
         createdAt: new Date(),
@@ -34,7 +34,7 @@ if (Meteor.isClient) {
 
       $('input.name').val("");
       $('input.url').val("");
-      $('textarea.description').val("");
+      $('textarea#description').val("");
     }
   });
 

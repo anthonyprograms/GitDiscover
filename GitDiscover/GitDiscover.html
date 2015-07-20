@@ -8,14 +8,30 @@
 	  	{{> loginButtons}}
 
 	  	<form class="new-entry">
-	  		<input type="text" class="name" placeholder="Project Name" />
+	  		<div class="input-field col s6">
+	          	<input id="name" type="text" class="validate">
+	          	<label for="last_name">Project Name</label>
+	        </div>
 	  		<br>
-	  		<input type="text" class="url" placeholder="URL" />
+	  		<div class="input-field col s6">
+	          	<input id="url" type="text" class="validate">
+	          	<label for="last_name">URL</label>
+	        </div>
 	  		<br>
-	  		<textarea rows="4" cols="50" type="text" class="description" placeholder="Description" ></textarea>
+	  		 <div class="row">
+			    <form class="col s12">
+			      <div class="row">
+			        <div class="input-field col s12">
+			          <textarea id="description" class="materialize-textarea"></textarea>
+			          <label for="textarea1">Description</label>
+			        </div>
+			      </div>
+			    </form>
+			  </div>
 	  		<br>
-	  		<select class="language">
-	  			<option value="JavaScript">JavaScript</option>
+	  		<label>Language</label>
+		    <select class="browser-default" id="language">
+		      	<option value="JavaScript">JavaScript</option>
 	  			<option value="Objective-C">Objective-C</option>
 	  			<option value="Swift">Swift</option>
 	  			<option value="C">C</option>
@@ -25,14 +41,19 @@
 	  			<option value="HTML">HTML</option>
 	  			<option value="Haskell">Haskell</option>
 	  			<option value="CSS">CSS</option>
-	  		</select>
-	  		<select class="skill-level">
+		    </select>
+		    <br>
+			<label>Skill Level</label>
+	  		<select class="browser-default" id="skill-level">
 	  			<option value="Beginner">Beginner</option>
 	  			<option value="Intermediate">Intermediate</option>
 	  			<option value="Advanced">Advanced</option>
 	  		</select>
 	  		<br>
-	  		<input type="submit"/>
+	  		<!-- <input type="submit"/> -->
+	  		<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    			<i class="material-icons"></i>
+  			</button>
 	  	</form>
 
 	  	{{#each entries}}
@@ -49,10 +70,12 @@
 </body>
 
 <template name="entry">
-	<div class="entries">
+
+	<div class="card-panel hoverable">
 		<span class="username">{{username}}</span>
 		{{#if isOwner}}
 			<button class="delete">&times;</button>
+			<button class="update">Update</button>
 		{{/if}}
 		<br>
 		<span class="name">{{name}}</span>
