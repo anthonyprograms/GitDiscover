@@ -1,1 +1,9 @@
-/* CSS declarations go here */
+body{
+	text-align: center;
+}
+
+input{
+	width: 50%;
+	font-size: 2em;
+	font-weight: 200;
+}

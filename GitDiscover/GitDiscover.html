@@ -1,14 +1,51 @@
 <head>
-  <title>GitDiscover</title>
+  	<title>GitDiscover</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  	<h1>Discover Open Source</h1>
 
-  {{> hello}}
+  	<form class="new-entry">
+  		<input type="text" class="name" placeholder="Project Name" />
+  		<br>
+  		<input type="text" class="url" placeholder="URL" />
+  		<br>
+  		<input type="text" class="description" placeholder="Description" />
+  		<!-- <br>
+  		<select class="language">
+  			<option value="JavaScript">JavaScript</option>
+  			<option value="Objective-C">Objective-C</option>
+  			<option value="Swift">Swift</option>
+  			<option value="C">C</option>
+  			<option value="Ruby">Ruby</option>
+  			<option value="Java">Java</option>
+  			<option value="Python">Python</option>
+  			<option value="HTML">HTML</option>
+  			<option value="Haskell">Haskell</option>
+  			<option value="CSS">CSS</option>
+  		</select>
+  		<select class="skill-level">
+  			<option value="Beginner">Beginner</option>
+  			<option value="Intermediate">Intermediate</option>
+  			<option value="Advanced">Advanced</option>
+  		</select> -->
+  		<br>
+  		<input type="submit"/>
+  	</form>
+
+  	{{#each entries}}
+  		{{> entry}}
+  	{{/each}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="entry">
+	<div>
+		<li>
+			<span class="name">{{name}}</span>
+			<br>
+			<span class="url">{{url}}</span>
+			<br>
+			<span class="description">{{description}}</span>
+		</li>
+	</div>
 </template>
