@@ -19,19 +19,15 @@ if (Meteor.isClient) {
       }
 
       if ((level.length > 0) && (language.length > 0)){
-        console.log("1");
         return Entries.find({skillLevel: level, language: language}, {sort: {createdAt: -1}});
       }
       else if (language.length > 0){
-        console.log("2");
         return Entries.find({language: language}, {sort: {createdAt: -1}});
       }
       else if (level.length > 0){
-        console.log("3");
         return Entries.find({skillLevel: level}, {sort: {createdAt: -1}});
       }
       else{
-        console.log("4");
         return Entries.find({}, {sort: {createdAt: -1}});
       }
     }
