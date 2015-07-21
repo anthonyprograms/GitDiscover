@@ -5,7 +5,7 @@ body{
 	margin-right: auto;
 }
 
-form.new-entry{
+form.new-entry, form.filters{
 	display: none;
 }
 
@@ -20,7 +20,7 @@ div.splash{
     margin: auto;
 }
 
-span.splash{
+a.splash{
 	color: #00CC7F;	
 	font-size: 3em;
 }

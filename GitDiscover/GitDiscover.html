@@ -16,54 +16,49 @@
 	          	<input id="name" type="text" class="validate">
 	          	<label for="last_name">Project Name</label>
 	        </div>
+
 	  		<br>
+
 	  		<div class="input-field col s6">
 	          	<input id="url" type="text" class="validate">
 	          	<label for="last_name">URL</label>
 	        </div>
-	  		<br>
-	  		 <div class="row">
-			    <form class="col s12">
-			      <div class="row">
-			        <div class="input-field col s12">
-			          <textarea id="description" class="materialize-textarea"></textarea>
-			          <label for="textarea1">Description</label>
-			        </div>
-			      </div>
-			    </form>
-			  </div>
+
 	  		<br>
 
-	  		<!-- <p> -->
-		      	<input type="checkbox" class="filled-in" id="filled-in-box" name="form-language" value="JavaScript"/>
-		      	<label for="filled-in-box" class="language-level">JavaScript</label>
-		    <!-- </p> -->
-		    <!-- <p> -->
-		      	<input type="checkbox" class="filled-in" id="filled-in-box2" name="form-language" value="Objective-C"/>
-		      	<label for="filled-in-box2" class="language-level">Objective-C</label>
-		    <!-- </p> -->
-		    <!-- <p> -->
-		      	<input type="checkbox" class="filled-in" id="filled-in-box3" name="form-language" value="Swift"/>
-		      	<label for="filled-in-box3" class="language-level">Swift</label>
-		    <!-- </p> -->
-		    <!-- <p> -->
-		      	<input type="checkbox" class="filled-in" id="filled-in-box4" name="form-language" value="C"/>
-		      	<label for="filled-in-box4" class="language-level">C</label>
-		    <!-- </p> -->
-		    <!-- <p> -->
-		      	<input type="checkbox" class="filled-in" id="filled-in-box5" name="form-language" value="Ruby"/>
-		      	<label for="filled-in-box5" class="language-level">Ruby</label>
-		    <!-- </p> -->
-		    <!-- <p> -->
-		      	<input type="checkbox" class="filled-in" id="filled-in-box6" name="form-language" value="Java"/>
-		      	<label for="filled-in-box6" class="language-level">Java</label>
-		    <!-- </p> -->
-		    <!-- <p> -->
-		      	<input type="checkbox" class="filled-in" id="filled-in-box7" name="form-language" value="Python"/>
-		      	<label for="filled-in-box7" class="language-level">Python</label>
-		    <!-- </p> -->
-		    <br>
-			<label>Skill Level</label>
+	  		<div class="row">
+			    <form class="col s12">
+			      	<div class="row">
+			        	<div class="input-field col s12">
+			          		<textarea id="description" class="materialize-textarea"></textarea>
+			          		<label for="textarea1">Description</label>
+			        	</div>
+			      	</div>
+			    </form>
+			</div>
+
+	      	<input type="checkbox" class="filled-in" id="filled-in-box" name="form-language" value="JavaScript"/>
+	      	<label for="filled-in-box" class="language-level">JavaScript</label>
+
+	      	<input type="checkbox" class="filled-in" id="filled-in-box2" name="form-language" value="Objective-C"/>
+	      	<label for="filled-in-box2" class="language-level">Objective-C</label>
+
+	      	<input type="checkbox" class="filled-in" id="filled-in-box3" name="form-language" value="Swift"/>
+	      	<label for="filled-in-box3" class="language-level">Swift</label>
+
+	      	<input type="checkbox" class="filled-in" id="filled-in-box4" name="form-language" value="C"/>
+	      	<label for="filled-in-box4" class="language-level">C</label>
+
+	      	<input type="checkbox" class="filled-in" id="filled-in-box5" name="form-language" value="Ruby"/>
+	      	<label for="filled-in-box5" class="language-level">Ruby</label>
+
+	      	<input type="checkbox" class="filled-in" id="filled-in-box6" name="form-language" value="Java"/>
+	      	<label for="filled-in-box6" class="language-level">Java</label>
+
+	      	<input type="checkbox" class="filled-in" id="filled-in-box7" name="form-language" value="Python"/>
+	      	<label for="filled-in-box7" class="language-level">Python</label>
+		    <br><br>
+			<h6>Skill Level</h6>
 	  		<select class="browser-default" id="skill-level">
 	  			<option value="Beginner">Beginner</option>
 	  			<option value="Intermediate">Intermediate</option>
@@ -129,7 +124,7 @@
 
   	{{else}}
   		<div class="splash">
-	  		<span class="splash">Discover Open Source</span>
+	  		<a class="splash" href="https://github.com/anthonyprograms/GitDiscover" target="_blank">Discover Open Source</a>
 	  		<br>
 	  		{{> loginButtons}}
 	  	</div>
