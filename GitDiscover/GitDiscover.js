@@ -17,7 +17,7 @@ if (Meteor.isClient) {
       if (Session.get("FilterSearch-Level") !== undefined){
         level = Session.get("FilterSearch-Level");
       }
-      
+
       if ((level.length > 0) && (language.length > 0)){
           return Entries.find({skillLevel: level}, {language: language}, {sort: {createdAt: -1}});
       }
@@ -66,6 +66,9 @@ if (Meteor.isClient) {
       if ((name === "") || (url === "") || (description === "") || (skillLevel == "") || (languages.length === 0)){
         alert("You need to fill out each field before publishing your post.");
       }
+      else if(url.substring(0,4) !== "http"){
+        alert("URL must start with http");
+      }
       else{
         Entries.insert({
           createdAt: new Date(),
@@ -81,6 +84,8 @@ if (Meteor.isClient) {
         $('input#name').val("");
         $('input#url').val("");
         $('textarea#description').val("");
+
+        $('.filters').toggle('show');
       }
     }
   });
@@ -88,11 +93,6 @@ if (Meteor.isClient) {
   Template.entry.events({
     "click .delete": function () {
       Entries.remove(this._id);
-    },
-    "click .update": function () {
-      console.log(this.name);
-      // console.log(this.url);
-      // console.log(this.name);
     }
   });
 
