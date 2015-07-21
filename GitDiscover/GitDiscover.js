@@ -7,9 +7,16 @@ if (Meteor.isClient) {
 
   Template.body.helpers({
     entries: function () {
-      var level = Session.get("FilterSearch");
-      // console.log(levels.length);
-      if (level.length > 0){
+      var language = Session.get("FilterSearch-Language");
+      var level = Session.get("FilterSearch-Level");
+
+      if ((level.length > 0) && (language.length > 0)){
+          return Entries.find({skillLevel: level}, {language: language});
+      }
+      else if (language.length > 0){
+          return Entries.find({language: language});
+      }
+      else if (level.length > 0){
           return Entries.find({skillLevel: level});
       }
       else{
@@ -22,17 +29,18 @@ if (Meteor.isClient) {
     "submit .filters": function (event) {
       event.preventDefault();
 
-      // var languages = [];
-      //   $('input[name=filter-level]:checked').each(function(i){
-      //     languages[i] = $(this).val();
-      //   });
+      var language = "";
+      $('input[name=filter-language]:checked').each(function(i){
+        language = $(this).val();
+      });
 
       var level = "";
       $('input[name=filter-level]:checked').each(function(i){
         level = $(this).val();
       });
 
-      Session.set("FilterSearch", level);
+      Session.set("FilterSearch-Language", language)
+      Session.set("FilterSearch-Level", level);
     },
 
     "submit .new-entry": function (event) {
