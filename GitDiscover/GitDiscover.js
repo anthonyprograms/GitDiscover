@@ -12,29 +12,50 @@ if (Meteor.isClient) {
   });
 
   Template.body.events({
+    "submit .filters": function (event) {
+      event.preventDefault();
+
+      // var skillLevel = $('filled-in:checked').val();
+
+      // console.log(skillLevel);
+
+      // return Entries.find({}, {sort: {createdAt}})
+    },
+
     "submit .new-entry": function (event) {
       event.preventDefault();
 
       var name = $('input#name').val();
       var url = $('input#url').val();
       var description = $('textarea#description').val();
-      var language = $('select#language').val();
+      // var language = $('input.filled-in:checked').val();
       var skillLevel = $('select#skill-level').val();
 
-      Entries.insert({
-        createdAt: new Date(),
-        name: name,
-        url: url,
-        description: description,
-        language: language,
-        skillLevel: skillLevel,
-        owner: Meteor.userId(),
-        username: Meteor.user().username
-      });
+      var languages = [];
+        $(':checkbox:checked').each(function(i){
+          languages[i] = $(this).val();
+        });
+      console.log(languages);
 
-      $('input#name').val("");
-      $('input#url').val("");
-      $('textarea#description').val("");
+      if ((name === "") || (url === "") || (description === "")){
+        alert("You need to fill out each field before publishing your post.");
+      }
+      else{
+        Entries.insert({
+          createdAt: new Date(),
+          name: name,
+          url: url,
+          description: description,
+          language: languages,
+          skillLevel: skillLevel,
+          owner: Meteor.userId(),
+          username: Meteor.user().username
+        });
+
+        $('input#name').val("");
+        $('input#url').val("");
+        $('textarea#description').val("");
+      }
     }
   });
 
