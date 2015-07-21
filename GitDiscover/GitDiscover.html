@@ -1,5 +1,6 @@
 <head>
   	<title>DiscoverOS</title>
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -8,9 +9,11 @@
 	  	<br>
 	  	{{> loginButtons}}
 	  	<br>
+	  	<!-- Buttons for showing posts or entry form -->
 	  	<a class="waves-effect waves-light btn" onclick="$('.new-entry').hide(); $('.posts').show();">Posts</a>
 	  	<a class="waves-effect waves-light btn" onclick="$('.new-entry').show(); $('.posts').hide();">Form</a>
 
+	  	<!-- Form for -->
 	  	<form class="new-entry">
 	  		<div class="input-field col s6">
 	          	<input id="name" type="text" class="validate">
@@ -71,7 +74,7 @@
 
 	  	<div class="posts">
 	  		<br>
-	  		<a class="waves-effect waves-light btn" onclick="$('.filters').toggle('show');" style="background-color:#3098F8;">Filters</a>
+	  		<a class="waves-effect waves-light btn" onclick="$('.filters').toggle('show');" style="background-color:#3098F8;"><i class="medium material-icons">view_list</i></a>
 	  		<br>
 	  		<form class="filters">
 		  		<h5>Languages</h5>
@@ -120,6 +123,7 @@
 		  	{{#each entries}}
 		  		{{> entry}}
 		  	{{/each}}
+
 		</div>
 
   	{{else}}
@@ -150,7 +154,7 @@
             {{#if isOwner}}
 	            <div class="card-action">
 	              <a class="delete">Delete</a>
-	              <a class="update">Update</a>
+	              <a class="update" onclick="">Update</a>
 	            </div>
             {{/if}}
           </div>
