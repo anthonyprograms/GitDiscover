@@ -4,52 +4,12 @@
 
 <body>
   	{{#if currentUser}}
-	  	<h1>DiscoverOS</h1>
+	  	<a class="title" href="https://github.com/anthonyprograms/gitdiscover" target="_blank" style="font-size:5em; color:black;">DiscoverOS</a>
+	  	<br>
 	  	{{> loginButtons}}
-
-	  	<!-- <button onclick="$('.filters').hide();">Hide Filters</button>
-	  	<button onclick="$('.filters').show();">Show Filters</button> -->
-	  	<button onclick="$('.new-entry').hide();">Hide Form</button>
-	  	<button onclick="$('.new-entry').show();">Show Form</button>
-
-	  	<!-- <form class="filters">
-	  		<label>Languages</label>
-		    <br>
-	  		<input type="checkbox" class="filled-in" id="language-filter1" value="JavaScript"/>
-		    <label for="language-filter1" class="check-language">JavaScript</label>
-
-		    <input type="checkbox" class="filled-in" id="language-filter2" value="Objective-C"/>
-		    <label for="language-filter2" class="check-language">Objective-C</label>
-
-		    <input type="checkbox" class="filled-in" id="language-filter3" value="Swift"/>
-		    <label for="language-filter3" class="check-language">Swift</label>
-
-		    <input type="checkbox" class="filled-in" id="language-filter4" value="C"/>
-		    <label for="language-filter4" class="check-language">C</label>
-
-		    <input type="checkbox" class="filled-in" id="language-filter5" value="Ruby"/>
-		    <label for="language-filter5" class="check-language">Ruby</label>
-
-		    <input type="checkbox" class="filled-in" id="language-filter6" value="Java"/>
-		    <label for="language-filter6" class="check-language">Java</label>
-
-		    <input type="checkbox" class="filled-in" id="language-filter7" value="Python"/>
-		    <label for="language-filter7" class="check-language">Python</label>
-		    <br>
-		    <label>Skill Level</label>
-		    <br>
-		    <input type="checkbox" class="filled-in" id="skill-level-filter1" value="Beginner"/>
-		    <label for="skill-level-filter1" class="check-level">Beginner</label>
-
-		    <input type="checkbox" class="filled-in" id="skill-level-filter2" value="Intermediate"/>
-		    <label for="skill-level-filter2" class="check-level">Intermediate</label>
-
-		    <input type="checkbox" class="filled-in" id="skill-level-filter3" value="Advanced"/>
-		    <label for="skill-level-filter3" class="check-level">Advanced</label>
-
-		    <br>
-		    <button class="btn waves-effect waves-light" type="submit">Filter</button>
-	  	</form> -->
+	  	<br>
+	  	<a class="waves-effect waves-light btn" onclick="$('.new-entry').hide(); $('.posts').show();">Posts</a>
+	  	<a class="waves-effect waves-light btn" onclick="$('.new-entry').show(); $('.posts').hide();">Form</a>
 
 	  	<form class="new-entry">
 	  		<div class="input-field col s6">
@@ -75,32 +35,32 @@
 	  		<br>
 
 	  		<!-- <p> -->
-		      	<input type="checkbox" class="filled-in" id="filled-in-box" value="JavaScript"/>
-		      	<label for="filled-in-box" class="check-language">JavaScript</label>
+		      	<input type="checkbox" class="filled-in" id="filled-in-box" name="form-language" value="JavaScript"/>
+		      	<label for="filled-in-box" class="language-level">JavaScript</label>
 		    <!-- </p> -->
 		    <!-- <p> -->
-		      	<input type="checkbox" class="filled-in" id="filled-in-box2" value="Objective-C"/>
-		      	<label for="filled-in-box2" class="check-language">Objective-C</label>
+		      	<input type="checkbox" class="filled-in" id="filled-in-box2" name="form-language" value="Objective-C"/>
+		      	<label for="filled-in-box2" class="language-level">Objective-C</label>
 		    <!-- </p> -->
 		    <!-- <p> -->
-		      	<input type="checkbox" class="filled-in" id="filled-in-box3" value="Swift"/>
-		      	<label for="filled-in-box3" class="check-language">Swift</label>
+		      	<input type="checkbox" class="filled-in" id="filled-in-box3" name="form-language" value="Swift"/>
+		      	<label for="filled-in-box3" class="language-level">Swift</label>
 		    <!-- </p> -->
 		    <!-- <p> -->
-		      	<input type="checkbox" class="filled-in" id="filled-in-box4" value="C"/>
-		      	<label for="filled-in-box4" class="check-language">C</label>
+		      	<input type="checkbox" class="filled-in" id="filled-in-box4" name="form-language" value="C"/>
+		      	<label for="filled-in-box4" class="language-level">C</label>
 		    <!-- </p> -->
 		    <!-- <p> -->
-		      	<input type="checkbox" class="filled-in" id="filled-in-box5" value="Ruby"/>
-		      	<label for="filled-in-box5" class="check-language">Ruby</label>
+		      	<input type="checkbox" class="filled-in" id="filled-in-box5" name="form-language" value="Ruby"/>
+		      	<label for="filled-in-box5" class="language-level">Ruby</label>
 		    <!-- </p> -->
 		    <!-- <p> -->
-		      	<input type="checkbox" class="filled-in" id="filled-in-box6" value="Java"/>
-		      	<label for="filled-in-box6" class="check-language">Java</label>
+		      	<input type="checkbox" class="filled-in" id="filled-in-box6" name="form-language" value="Java"/>
+		      	<label for="filled-in-box6" class="language-level">Java</label>
 		    <!-- </p> -->
 		    <!-- <p> -->
-		      	<input type="checkbox" class="filled-in" id="filled-in-box7" value="Python"/>
-		      	<label for="filled-in-box7" class="check-language">Python</label>
+		      	<input type="checkbox" class="filled-in" id="filled-in-box7" name="form-language" value="Python"/>
+		      	<label for="filled-in-box7" class="language-level">Python</label>
 		    <!-- </p> -->
 		    <br>
 			<label>Skill Level</label>
@@ -114,9 +74,58 @@
 	  		<button class="btn waves-effect waves-light" type="submit">Submit</button>
 	  	</form>
 
-	  	{{#each entries}}
-	  		{{> entry}}
-	  	{{/each}}
+	  	<div class="posts">
+	  		<br>
+	  		<a class="waves-effect waves-light btn" onclick="$('.filters').toggle('show');" style="background-color:#3098F8;">Filters</a>
+	  		<br>
+	  		<form class="filters">
+		  		<h5>Languages</h5>
+		  		<input name="filter-language" type="radio" id="language-filter1" value="JavaScript"/>
+			    <label for="language-filter1" class="language-level">JavaScript</label>
+
+			    <input name="filter-language" type="radio" id="language-filter2" value="Objective-C"/>
+			    <label for="language-filter2" class="language-level">Objective-C</label>
+
+			    <input name="filter-language" type="radio" id="language-filter3" value="Swift"/>
+			    <label for="language-filter3" class="language-level">Swift</label>
+
+			    <input name="filter-language" type="radio" id="language-filter4" value="C"/>
+			    <label for="language-filter4" class="language-level">C</label>
+
+			    <input name="filter-language" type="radio" id="language-filter5" value="Ruby"/>
+			    <label for="language-filter5" class="language-level">Ruby</label>
+
+			    <input name="filter-language" type="radio" id="language-filter6" value="Java"/>
+			    <label for="language-filter6" class="language-level">Java</label>
+
+			    <input name="filter-language" type="radio" id="language-filter7" value="Python"/>
+			    <label for="language-filter7" class="language-level">Python</label>
+
+			    <input name="filter-language" type="radio" id="language-filter7" value=""/>
+			    <label for="language-filter7">Who Cares, I'm a beast</label>
+			    <br>
+			    <h5>Skill Level</h5>
+
+			    <input name="filter-level" type="radio" id="skill-level-filter1" value="Beginner"/>
+			    <label for="skill-level-filter1" class="language-level">Beginner</label>
+
+			    <input name="filter-level" type="radio" id="skill-level-filter2" value="Intermediate"/>
+			    <label for="skill-level-filter2" class="language-level">Intermediate</label>
+
+			    <input name="filter-level" type="radio" id="skill-level-filter3" value="Advanced" />
+			    <label for="skill-level-filter3" class="language-level">Advanced</label>
+
+			    <input name="filter-level" type="radio" id="skill-level-filter4" value="" />
+			    <label for="skill-level-filter4" class="language-level">Don't Care</label>
+
+			    <br>
+			    <button class="btn waves-effect waves-light" type="submit">Go</button>
+		  	</form>
+
+		  	{{#each entries}}
+		  		{{> entry}}
+		  	{{/each}}
+		</div>
 
   	{{else}}
   		<div class="splash">
